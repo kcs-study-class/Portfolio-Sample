@@ -63,9 +63,9 @@ const Skills: React.FC = () => (
   <section id="skills">
     <h2>Skills</h2>
     {skillGroups.map((group) => (
-      <div className="project" key={group.title}>
-        <h3>{group.title}</h3>
-        <p>{group.items.join(" / ")}</p>
+      <div className="project skills-item" key={group.title}>
+        <h3 className="skills-title">{group.title}</h3>
+        <p className="skills-items">{group.items.join(" / ")}</p>
       </div>
     ))}
   </section>

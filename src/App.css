@@ -454,6 +454,20 @@ a:hover {
   left: 0;
 }
 
+
+#skills .skills-item {
+  align-items: flex-start;
+}
+
+#skills .skills-title {
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+#skills .skills-items {
+  margin-bottom: 0;
+}
 /* Contact */
 .contact .project {
   border-left-color: #9b59b6;

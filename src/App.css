@@ -496,6 +496,15 @@ a:hover {
 
   .about-photo {
     width: 100%;
+    max-width: 420px;
+  }
+
+  .about-head img.about-photo {
+    height: auto;
+    display: block;
+  }
+
+  .about-head .about-photo-placeholder {
     height: 220px;
   }
 

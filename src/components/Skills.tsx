@@ -26,6 +26,8 @@ const skillGroups = [
       "React",
       "gRPC",
       "WebSocket",
+      "Docker",
+      "k8s",
       "AWS",
       "GCP",
       "Azure",
@@ -46,6 +48,13 @@ const skillGroups = [
       "GitLab",
       "Notion",
       "BackLog",
+    ],
+  },
+  {
+    title: "取得資格",
+    items: [
+      "MOS Excel 2016",
+      "MOS PowerPoint 2016",
     ],
   },
 ];

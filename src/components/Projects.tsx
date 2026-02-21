@@ -46,6 +46,11 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                   Play
                 </a>
               )}
+              {project.homepage && (
+                <a href={project.homepage} target="_blank" rel="noreferrer">
+                  HomePage
+                </a>
+              )}
             </div>
           </div>
         </div>

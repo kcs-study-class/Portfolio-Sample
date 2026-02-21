@@ -9,5 +9,6 @@ export interface Project {
   github?: string
   gameUrl?: string
   image?: string | null
+  homepage?: string
   category: ProjectCategory
 }

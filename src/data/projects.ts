@@ -2,11 +2,14 @@
 
 export const projects: Project[] = [
   {
-    title: '未公開',
-    platform: '',
-    period: '開発',
-    tech: ['非公開'],
-    role: '未公開',
+    title: 'Portfolio サンプル作成',
+    platform: 'Web',
+    period: '3日',
+    tech: ['TypeScript', 'React', 'Codex', 'PhotoShop', 'CloudFlare', 'AWS S3', 'AWS CloudFront'],
+    image:'/images/portfolio_thumb.png',
+    github:'https://github.com/kcs-trial-class/Portfolio-Sample',
+    homepage:'./',
+    role: '',
     category: 'professional'
   },
   {
@@ -16,10 +19,11 @@ export const projects: Project[] = [
     tech: ['非公開'],
     role: 'リードプログラマー',
     image:'/images/clash_dream_thumb.png',
+    homepage:'https://gamebiz.jp/news/417000',
     category: 'professional'
   },
   {
-    title: 'モック開発',
+    title: 'モック開発 (RPGゲーム)',
     platform: '',
     period: '2025年6月~2025年7月',
     tech: ['Unity', 'C#'],
@@ -27,7 +31,7 @@ export const projects: Project[] = [
     category: 'professional'
   },
   {
-    title: '非公開',
+    title: '非公開 (教育向けアプリケーション)',
     platform: '',
     period: '2024年12月~2025年5月',
     tech: ['Unity', 'C#', 'PHP', 'Golang', 'Rider','VS Code', 'AWS' ,'AWS Elemental MediaLive'],
@@ -35,7 +39,7 @@ export const projects: Project[] = [
     category: 'professional'
   },
   {
-    title: '非公開',
+    title: '非公開 (点数計算のある戦略ゲーム)',
     platform: '',
     period: '2024年10月~2025年11月',
     tech: ['Unity', 'C#', 'PHP', 'Rider', 'AWS'],
@@ -43,7 +47,7 @@ export const projects: Project[] = [
     category: 'professional'
   },
   {
-    title: '非公開 (アニメ関連)',
+    title: '非公開 (アニメ作画支援ツール)',
     platform: 'iOS',
     period: '2023年10月~2024年9月',
     tech: ['Unity', 'C#'],
@@ -61,7 +65,7 @@ export const projects: Project[] = [
     category: 'professional'
   },
   {
-    title: '非公開',
+    title: '非公開 (会話型推理ゲーム)',
     platform: 'PC Steam',
     period: '2022年4月~2023年10月',
     tech: ['Unity', 'C#'],
@@ -69,7 +73,7 @@ export const projects: Project[] = [
     category: 'professional'
   },
   {
-    title: '非公開',
+    title: '非公開 (3Dストラテジーゲーム)',
     platform: 'iOS, Android',
     period: '2022年9月~2023年3月',
     tech: ['Unity', 'C#', 'C++', 'Golang', 'gRPC', 'VisualStudio 2022', 'VS Code'],
@@ -82,6 +86,7 @@ export const projects: Project[] = [
     period: '2020年10月～2022年8月',
     tech: ['Unity', 'C#', 'C++', 'Python', 'VisualStudio 2019'],
     role: 'プログラマー, 設計',
+    homepage:'https://dondafulfestival-20th.taiko-ch.net/',
     category: 'professional'
   },
   {

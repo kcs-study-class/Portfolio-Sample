@@ -5,7 +5,7 @@ export const projects: Project[] = [
     title: 'Portfolio サンプル作成',
     platform: 'Web',
     period: '3日',
-    tech: ['TypeScript', 'React', 'Codex', 'PhotoShop', 'CloudFlare', 'AWS S3', 'AWS CloudFront'],
+    tech: ['TypeScript', 'React', 'Codex', 'PhotoShop', 'Cloudflare', 'AWS S3', 'AWS CloudFront'],
     image:'/images/portfolio_thumb.png',
     github:'https://github.com/kcs-trial-class/Portfolio-Sample',
     homepage:'./',

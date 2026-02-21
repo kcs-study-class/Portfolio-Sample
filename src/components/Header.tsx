@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,12 +15,11 @@ const Header: React.FC = () => {
     <>
       <header className="header">
         <div className="header-inner">
-          <div className="logo">田村 航海のポートフォリオ</div>
+          <div className="logo">ポートフォリオ</div>
 
-          {/* PC用メニュー */}
           <nav className="nav-desktop">
             <ul>
-              {menuItems.map(item => (
+              {menuItems.map((item) => (
                 <li key={item.id}>
                   <a href={`#${item.id}`}>{item.label}</a>
                 </li>
@@ -28,10 +27,10 @@ const Header: React.FC = () => {
             </ul>
           </nav>
 
-          {/* モバイル用ハンバーガー */}
           <button
             className={`hamburger ${isOpen ? 'is-open' : ''}`}
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="メニュー"
           >
             <span />
             <span />
@@ -40,10 +39,9 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* モバイル用ドロワー */}
       <nav className={`nav-mobile ${isOpen ? 'open' : ''}`} onClick={closeMenu}>
-        <ul onClick={e => e.stopPropagation()}>
-          {menuItems.map(item => (
+        <ul onClick={(e) => e.stopPropagation()}>
+          {menuItems.map((item) => (
             <li key={item.id}>
               <a href={`#${item.id}`} onClick={closeMenu}>
                 {item.label}

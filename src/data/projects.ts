@@ -1,31 +1,140 @@
-import type { Project } from '../types'
+﻿import type { Project } from '../types'
 
 export const projects: Project[] = [
   {
-    title: 'BANgBANgStreaming（9人開発、BitSummit）',
-    period: '2024年4月〜7月（5ヶ月）',
-    tech: ['Unity', 'Physics', 'Networking'],
-    role: 'リードプログラマー、物理実装、多人数同期',
-    github: 'https://github.com/your/pinball',
-    itch: 'https://your.itch.io/game',
-    image: '/images/pinball-thumb.jpg',
+    title: '未公開',
+    platform: '',
+    period: '開発',
+    tech: ['非公開'],
+    role: '未公開',
     category: 'professional'
   },
   {
-    title: 'Horse Racing Analyzer（個人開発）',
-    period: '2025年〜現在',
-    tech: ['Go', 'JavaScript', 'AWS'],
-    role: '全般、リアルタイム予測モデル',
-    github: 'https://github.com/your/horse-analyzer',
-    image: '/images/horse-thumb.jpg',
+    title: 'クラッシュ＆ドリーム',
+    platform: 'Mirrativ App',
+    period: '開発・継続運用',
+    tech: ['非公開'],
+    role: 'リードプログラマー',
+    image:'/images/clash_dream_thumb.png',
     category: 'professional'
   },
   {
-    title: '学生2Dアクションゲーム',
-    period: '2021年3月〜6月（4ヶ月）',
-    tech: ['Unity 2D', 'C#'],
+    title: 'モック開発',
+    platform: '',
+    period: '2025年6月~2025年7月',
+    tech: ['Unity', 'C#'],
+    role: 'リードプログラマー',
+    category: 'professional'
+  },
+  {
+    title: '非公開',
+    platform: '',
+    period: '2024年12月~2025年5月',
+    tech: ['Unity', 'C#', 'PHP', 'Golang', 'Rider','VS Code', 'AWS' ,'AWS Elemental MediaLive'],
     role: 'プログラマー',
-    image: '/images/student-game.jpg',
+    category: 'professional'
+  },
+  {
+    title: '非公開',
+    platform: '',
+    period: '2024年10月~2025年11月',
+    tech: ['Unity', 'C#', 'PHP', 'Rider', 'AWS'],
+    role: 'プログラマー',
+    category: 'professional'
+  },
+  {
+    title: '非公開 (アニメ関連)',
+    platform: 'iOS',
+    period: '2023年10月~2024年9月',
+    tech: ['Unity', 'C#'],
+    role: 'プログラマー',
+    category: 'professional'
+  },
+  {
+    title: 'E-THREE CUP 配信サポートシステム',
+    platform: 'PC',
+    period: '3日',
+    tech: ['Unity', 'C#'],
+    role: 'リードプログラマー',
+    gameUrl:'https://www.youtube.com/watch?v=7XA3oY80X3Y',
+    image:'/images/apex_tool.png',
+    category: 'professional'
+  },
+  {
+    title: '非公開',
+    platform: 'PC Steam',
+    period: '2022年4月~2023年10月',
+    tech: ['Unity', 'C#'],
+    role: 'リードプログラマー',
+    category: 'professional'
+  },
+  {
+    title: '非公開',
+    platform: 'iOS, Android',
+    period: '2022年9月~2023年3月',
+    tech: ['Unity', 'C#', 'C++', 'Golang', 'gRPC', 'VisualStudio 2022', 'VS Code'],
+    role: 'クライアント/サーバープログラマー, インフラ',
+    category: 'professional'
+  },
+  {
+    title: '太鼓の達人 ドンダフルフェスティバル',
+    platform: 'Nintendo Switch',
+    period: '2020年10月～2022年8月',
+    tech: ['Unity', 'C#', 'C++', 'Python', 'VisualStudio 2019'],
+    role: 'プログラマー, 設計',
+    category: 'professional'
+  },
+  {
+    title: 'AIの歌（8人開発、卒業進級制作展 2021）',
+    platform: 'iOS, Android',
+    period: '2020年4月〜2021年2月（10か月）',
+    tech: ['Unity 2D', 'C#', 'VisualStudio 2019'],
+    role: 'リードプログラマー',
+    image: '/images/ai_songs.png',
+    category: 'student'
+  },
+  {
+    title: 'Jumping Bird（卒業進級制作展 2019）',
+    platform: 'iOS, Android',
+    period: '2019年10月〜2020年2月（5か月）',
+    tech: ['Unity 2D', 'C#', 'VisualStudio 2017'],
+    role: 'リードプログラマー',
+    category: 'student'
+  },
+  {
+    title: 'オルカアタック（TGS2019）',
+    platform: 'iOS, Android',
+    period: '2019年4月〜2019年9月（5か月）',
+    tech: ['Unity 2D', 'C#', 'VisualStudio 2017'],
+    role: 'リードプログラマー',
+    category: 'student'
+  },
+  {
+    title: 'てくしぃプロジェクト（TGS2018、卒業進級制作展 2018）',
+    platform: 'PC (VR)',
+    period: '2018年4月〜2019年2月（10か月）',
+    tech: ['Unity 2D', 'C#', 'VisualStudio 2017'],
+    role: 'プログラマー・機材',
+    image: '/images/tech_thumb.png',
+    gameUrl: 'https://www.youtube.com/watch?v=25kTSssfiRo',
+    category: 'student'
+  },
+  {
+    title: '遅刻魔少女★スクランブル（6人開発、TGS2018）',
+    platform: 'PC',
+    period: '2018年4月〜2018年9月（5か月）',
+    tech: ['Unity 2D', 'C#', 'VisualStudio 2017'],
+    role: 'リードプログラマー',
+    image: '/images/lategirl_thumb.png',
+    category: 'student'
+  },
+  {
+    title: '神剣のメタノイア（TGS2017、卒業進級制作展 2017）',
+    platform: 'PC, VR',
+    period: '2017年4月〜2018年2月（10か月）',
+    tech: ['Unity 2D', 'C#', 'VisualStudio 2017', 'YEBIS', 'CRI ADX2'],
+    role: 'プログラマー',
+    image: null,
     category: 'student'
   }
 ]

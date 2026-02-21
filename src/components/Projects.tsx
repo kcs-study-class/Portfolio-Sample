@@ -32,8 +32,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                   GitHub
                 </a>
               )}
-              {project.itch && (
-                <a href={project.itch} target="_blank" rel="noreferrer">
+              {project.gameUrl && (
+                <a href={project.gameUrl} target="_blank" rel="noreferrer">
                   Play
                 </a>
               )}

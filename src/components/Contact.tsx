@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
       <div className="project">
         <h3>Links</h3>
         <p>
-          <a href="https://github.com/" target="_blank" rel="noreferrer">
+          <a href="https://github.com/kcs-trial-class/Portfolio-Sample" target="_blank" rel="noreferrer">
             GitHub
           </a>{' '}
           /{' '}

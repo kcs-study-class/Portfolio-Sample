@@ -6,7 +6,7 @@ export interface Project {
   tech: string[]
   role: string
   github?: string
-  itch?: string
+  gameUrl?: string
   image: string
   category: ProjectCategory
 }

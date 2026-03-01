@@ -23,7 +23,7 @@ jobs:
       - name: Use NodeJS
         uses: actions/setup-node@v1
         with:
-          # 20260301時点でのLTSバージョン指定.
+          # 20260301時点でのLTSバージョン指定
           node-version: 24.14.0 
       # dependencyのキャッシュ
       - name: Cache node_modules

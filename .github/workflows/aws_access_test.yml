@@ -22,4 +22,3 @@ jobs:
           role-to-assume: ${{ env.AWS_ROLE_ARN }}
           aws-region: ap-northeast-1
       - run: aws sts get-caller-identity
-      

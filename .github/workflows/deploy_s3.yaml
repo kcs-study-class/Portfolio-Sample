@@ -1,0 +1,49 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  # GitHubActionsOIDCRole：作成したIAMロール名
+  AWS_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActions_kcs-study-class@Portfolio-Sample_OIDCRole
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # チェックアウトするアクション
+      - uses: actions/checkout@v2
+      # 特定バージョンのnodeを設定するアクション
+      - name: Use NodeJS
+        uses: actions/setup-node@v1
+        with:
+          # 20260301時点でのLTSバージョン指定.
+          node-version: 24.14.0 
+      # dependencyのキャッシュ
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          #キャッシュしたファイルとキーを格納する場所(OSによって異なる)
+          path: ~/.npm
+          #キャッシュのリストアや保存をするためのキー
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          #キャッシュをリストアするためのキーのリスト
+          restore-keys: |
+            ${{ runner.os }}-node-
+      # dependencyのインストール
+      - run: npm ci
+      # ビルド
+      - run: npm run build
+      # awsへのアクセス情報を設定
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ap-northeast-1
+      # S3にビルドしたものをアップロード
+      - run: aws s3 cp --recursive build s3://kcs-portfolio-sample/

@@ -1,0 +1,24 @@
+name: AWS Test
+on:
+  push:
+    branches:
+      # 作業ブランチ
+      - test
+
+env:
+  # GitHubActionsOIDCRole：作成したIAMロール名
+  AWS_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActions_kcs-study-class@Portfolio-Sample_OIDCRole
+
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  aws-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ap-northeast-1
+      - run: aws sts get-caller-identity

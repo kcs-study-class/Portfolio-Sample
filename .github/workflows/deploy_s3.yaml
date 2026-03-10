@@ -1,0 +1,52 @@
+﻿name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  # GitHubActionsOIDCRoleで取得したIAMロール名
+  AWS_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActions_kcs-study-class@Portfolio-Sample_OIDCRole
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    environment: prod
+    runs-on: ubuntu-latest
+    steps:
+      # チェックアウトするアクション
+      - uses: actions/checkout@v6.0.2
+      # ビルド用のNodeを指定するアクション
+      - name: Use NodeJS
+        uses: actions/setup-node@v6.3.0
+        with:
+          # 2026/03/01時点のLTSバージョン指定
+          node-version: 24.14.0 
+      # dependencyのキャッシュ
+      - name: Cache node_modules
+        uses: actions/cache@v5.0.3
+        with:
+          # キャッシュしたファイルとキーを一致させる設定（OSによって異なる）
+          path: ~/.npm
+          # キャッシュのリストアに使うためのキー
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          # キャッシュをリストアできなかった時のキーのリスト
+          restore-keys: |
+            ${{ runner.os }}-node-
+      # dependencyのインストール
+      - run: npm ci
+      # ビルド
+      - run: npm run build
+      # awsへのアクセス権限を設定
+      - uses: aws-actions/configure-aws-credentials@v6.0.0
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ap-northeast-1
+      # S3にビルドしたものをアップロード
+      - run: aws s3 cp --recursive build s3://kcs-portfolio-sample/
+      # CloudFrontのキャッシュを無効化
+      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"

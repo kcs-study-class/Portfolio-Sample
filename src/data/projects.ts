@@ -13,16 +13,6 @@ export const projects: Project[] = [
     category: 'professional'
   },
   {
-    title: 'クラッシュ＆ドリーム',
-    platform: 'Mirrativ App',
-    period: '開発・継続運用',
-    tech: ['非公開'],
-    role: 'リードプログラマー',
-    image:'/images/clash_dream_thumb.png',
-    homepage:'https://gamebiz.jp/news/417000',
-    category: 'professional'
-  },
-  {
     title: 'モック開発 (RPGゲーム)',
     platform: '',
     period: '2025年6月~2025年7月',

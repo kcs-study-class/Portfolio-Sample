@@ -47,6 +47,6 @@ jobs:
           role-to-assume: ${{ env.AWS_ROLE_ARN }}
           aws-region: ap-northeast-1
       # S3にビルドしたものをアップロード
-      - run: aws s3 cp --recursive build s3://kcs-portfolio-sample/
+      - run: aws s3 cp --recursive dist s3://kcs-portfolio-sample/
       # CloudFrontのキャッシュを無効化
       - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"

@@ -13,14 +13,6 @@ export const projects: Project[] = [
     category: 'professional'
   },
   {
-    title: 'モック開発 (RPGゲーム)',
-    platform: '',
-    period: '2025年6月~2025年7月',
-    tech: ['Unity', 'C#'],
-    role: 'リードプログラマー',
-    category: 'professional'
-  },
-  {
     title: '非公開 (教育向けアプリケーション)',
     platform: '',
     period: '2024年12月~2025年5月',

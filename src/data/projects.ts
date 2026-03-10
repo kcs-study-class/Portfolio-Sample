@@ -13,22 +13,6 @@ export const projects: Project[] = [
     category: 'professional'
   },
   {
-    title: '非公開 (教育向けアプリケーション)',
-    platform: '',
-    period: '2024年12月~2025年5月',
-    tech: ['Unity', 'C#', 'PHP', 'Golang', 'Rider','VS Code', 'AWS' ,'AWS Elemental MediaLive'],
-    role: 'プログラマー',
-    category: 'professional'
-  },
-  {
-    title: '非公開 (点数計算のある戦略ゲーム)',
-    platform: '',
-    period: '2024年10月~2025年11月',
-    tech: ['Unity', 'C#', 'PHP', 'Rider', 'AWS'],
-    role: 'プログラマー',
-    category: 'professional'
-  },
-  {
     title: '非公開 (アニメ作画支援ツール)',
     platform: 'iOS',
     period: '2023年10月~2024年9月',

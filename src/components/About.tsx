@@ -1,35 +1,35 @@
-﻿import React, { useState } from 'react'
+import React, { useState } from 'react'
+
+const profile = {
+  name: '田村 航海',
+  photo: '/images/profile.jpg',
+  age: '27歳',
+  education: '東京デザインテクノロジーセンター専門学校',
+  selfPr:
+    '企画から実装、運用改善までを一貫して進められることが強みです。要件を整理して優先順位を明確にし、短いサイクルで検証しながら品質と速度を両立します。開発中は進捗と課題を可視化し、関係者との認識ずれを防ぎます。新しい技術の検証も継続し、再利用しやすい構成で長期運用に耐える成果物を目指しています。',
+  careerAndAwards: [
+    '以下サンプルです。',
+    '2024年12月〜2025年5月: ライブ配信連動ゲーム開発にて、UnityクライアントとGolangバックエンドの実装を担当。',
+    '2024年10月〜2025年11月: 運用中スマホタイトルの改修案件で、機能追加・不具合修正・運用改善を担当。',
+    '2023年10月〜2024年9月: アニメーション関連開発案件に参画し、Unity(C#)でのクライアント実装を担当。',
+    '2022年9月〜2023年3月: マルチプラットフォーム開発で、クライアント/サーバー実装およびインフラ対応を担当。',
+    '2020年10月〜2022年8月: 「太鼓の達人 ドンダフルフェスティバル」開発にて、実装および設計を担当。',
+    '学生時代: 卒業進級制作展・TGS出展作品に複数参加（てくしぃちゃん、AIの歌、オルカアタック、神剣のメタノイア ほか）。',
+  ],
+  osAndTools: [
+    '使用OS: Windows, Mac, Rocky Linux (RHEL)',
+    '使用ツール: Unity, Rider, VS Code, Visual Studio, Git, GitHub, AWS, Redmine',
+  ],
+  phone: '070-2406-xxxx',
+  email: 'info@kitsune-creative.studio',
+  media: [
+    { label: 'GitHub', url: 'https://github.com/kcs-trial-class/Portfolio-Sample' },
+    { label: 'Qiita', url: 'https://qiita.com/' },
+  ],
+}
 
 const About: React.FC = () => {
   const [imageError, setImageError] = useState(false)
-
-  const profile = {
-    name: '田村 航海',
-    photo: '/images/profile.jpg',
-    age: '27歳',
-    education: '東京デザインテクノロジーセンター専門学校',
-    selfPr:
-      '企画から実装、運用改善までを一貫して進められることが強みです。要件を整理して優先順位を明確にし、短いサイクルで検証しながら品質と速度を両立します。開発中は進捗と課題を可視化し、関係者との認識ずれを防ぎます。新しい技術の検証も継続し、再利用しやすい構成で長期運用に耐える成果物を目指しています。',
-    careerAndAwards: [
-      '以下サンプルです。',
-      '2024年12月〜2025年5月: ライブ配信連動ゲーム開発にて、UnityクライアントとGolangバックエンドの実装を担当。',
-      '2024年10月〜2025年11月: 運用中スマホタイトルの改修案件で、機能追加・不具合修正・運用改善を担当。',
-      '2023年10月〜2024年9月: アニメーション関連開発案件に参画し、Unity(C#)でのクライアント実装を担当。',
-      '2022年9月〜2023年3月: マルチプラットフォーム開発で、クライアント/サーバー実装およびインフラ対応を担当。',
-      '2020年10月〜2022年8月: 「太鼓の達人 ドンダフルフェスティバル」開発にて、実装および設計を担当。',
-      '学生時代: 卒業進級制作展・TGS出展作品に複数参加（てくしぃちゃん、AIの歌、オルカアタック、神剣のメタノイア ほか）。'
-    ],
-    osAndTools: [
-      '使用OS: Windows, Mac, Rocky Linux (RHEL)',
-      '使用ツール: Unity, Rider, VS Code, Visual Studio, Git, GitHub, AWS, Redmine'
-    ],
-    phone: '070-2406-xxxx',
-    email: 'info@kitsune-creative.studio',
-    media: [
-      { label: 'GitHub', url: 'https://github.com/kcs-trial-class/Portfolio-Sample' },
-      { label: 'Qiita', url: 'https://qiita.com/' }
-    ]
-  }
 
   return (
     <section className="about-profile">
@@ -73,8 +73,8 @@ const About: React.FC = () => {
       <div className="about-block">
         <h3>職務経歴・受賞歴</h3>
         <ul>
-          {profile.careerAndAwards.map((item) => (
-            <li key={item}>{item}</li>
+          {profile.careerAndAwards.map((item, i) => (
+            <li key={i}>{item}</li>
           ))}
         </ul>
       </div>
@@ -82,8 +82,8 @@ const About: React.FC = () => {
       <div className="about-block">
         <h3>使用OS・使用可能ツール</h3>
         <ul>
-          {profile.osAndTools.map((item) => (
-            <li key={item}>{item}</li>
+          {profile.osAndTools.map((item, i) => (
+            <li key={i}>{item}</li>
           ))}
         </ul>
       </div>

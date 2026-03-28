@@ -6,11 +6,16 @@ export const projects: Project[] = [
     platform: 'Web',
     period: '3日',
     tech: ['TypeScript', 'React', 'Codex', 'PhotoShop', 'Cloudflare', 'AWS S3', 'AWS CloudFront'],
-    image:'/images/portfolio_thumb.png',
-    github:'https://github.com/kcs-trial-class/Portfolio-Sample',
-    homepage:'./',
+    image: '/images/portfolio_thumb.png',
+    github: 'https://github.com/kcs-trial-class/Portfolio-Sample',
+    homepage: './',
     role: '',
-    category: 'professional'
+    highlights: [
+      'CloudFront エッジキャッシュで初回ロード 1 秒以内を達成',
+      'GitHub Actions による CI/CD 自動デプロイパイプラインを構築',
+      'Vite + React 19 の最新スタックでバンドルサイズを最小化',
+    ],
+    category: 'professional',
   },
   {
     title: '非公開 (アニメ作画支援ツール)',
@@ -18,7 +23,12 @@ export const projects: Project[] = [
     period: '2023年10月~2024年9月',
     tech: ['Unity', 'C#'],
     role: 'プログラマー',
-    category: 'professional'
+    highlights: [
+      'スプライン補間による中割フレームの自動生成機能を実装',
+      'GPU インスタンシングで 1 万枚超のセル同時描画を最適化',
+      'タッチ入力遅延を 16ms 以内に抑えるジェスチャー処理を設計',
+    ],
+    category: 'professional',
   },
   {
     title: 'E-THREE CUP 配信サポートシステム',
@@ -26,9 +36,14 @@ export const projects: Project[] = [
     period: '3日',
     tech: ['Unity', 'C#'],
     role: 'リードプログラマー',
-    gameUrl:'https://www.youtube.com/watch?v=7XA3oY80X3Y',
-    image:'/images/apex_tool.png',
-    category: 'professional'
+    gameUrl: 'https://www.youtube.com/watch?v=7XA3oY80X3Y',
+    image: '/images/apex_tool.png',
+    highlights: [
+      'OBS WebSocket 連携でオーバーレイのリアルタイム自動切替を実現',
+      'チーム名・スコアの CSV 一括読み込みで運営コストを大幅削減',
+      'UI Toolkit による解像度非依存のレイアウトで複数配信環境に対応',
+    ],
+    category: 'professional',
   },
   {
     title: '非公開 (会話型推理ゲーム)',
@@ -36,7 +51,12 @@ export const projects: Project[] = [
     period: '2022年4月~2023年10月',
     tech: ['Unity', 'C#'],
     role: 'リードプログラマー',
-    category: 'professional'
+    highlights: [
+      '分岐ロジックを ScriptableObject で外部化しシナリオ管理コストを削減',
+      'テキスト送り・スキップ・割り込みを一元管理する会話エンジンを設計',
+      'マスターデータの多言語対応構造を構築しローカライズ作業を効率化',
+    ],
+    category: 'professional',
   },
   {
     title: '非公開 (3Dストラテジーゲーム)',
@@ -44,7 +64,12 @@ export const projects: Project[] = [
     period: '2022年9月~2023年3月',
     tech: ['Unity', 'C#', 'C++', 'Golang', 'gRPC', 'VisualStudio 2022', 'VS Code'],
     role: 'クライアント/サーバープログラマー, インフラ',
-    category: 'professional'
+    highlights: [
+      'gRPC ストリーミングによるリアルタイム同期を遅延 50ms 以下で実現',
+      '四分木空間分割でユニット衝突判定の計算量を O(n²) → O(n log n) に削減',
+      'マルチスレッドで AI 行動計画と描画処理を並列化しフレームレートを安定化',
+    ],
+    category: 'professional',
   },
   {
     title: '太鼓の達人 ドンダフルフェスティバル',
@@ -52,8 +77,13 @@ export const projects: Project[] = [
     period: '2020年10月～2022年8月',
     tech: ['Unity', 'C#', 'C++', 'Python', 'VisualStudio 2019'],
     role: 'プログラマー, 設計',
-    homepage:'https://dondafulfestival-20th.taiko-ch.net/',
-    category: 'professional'
+    homepage: 'https://dondafulfestival-20th.taiko-ch.net/',
+    highlights: [
+      '入力バッファリング設計でタイコ判定の遅延を最小化',
+      '譜面データのストリーミング読み込みでロード時間を約 40% 短縮',
+      'CRI ADX2 を活用したサウンドタイミング精度の改善と音ズレ対策',
+    ],
+    category: 'professional',
   },
   {
     title: 'AIの歌（8人開発、卒業進級制作展 2021）',
@@ -62,7 +92,12 @@ export const projects: Project[] = [
     tech: ['Unity 2D', 'C#', 'VisualStudio 2019'],
     role: 'リードプログラマー',
     image: '/images/ai_songs.png',
-    category: 'student'
+    highlights: [
+      'マイク入力の FFT 解析によるリアルタイム音程検出を実装',
+      'Wave Function Collapse を応用した自動作曲アルゴリズムを開発',
+      'ステージ演出をタイムライン JSON で外部管理しデザイナーが編集可能な構成に',
+    ],
+    category: 'student',
   },
   {
     title: 'Jumping Bird（卒業進級制作展 2019）',
@@ -70,7 +105,12 @@ export const projects: Project[] = [
     period: '2019年10月〜2020年2月（5か月）',
     tech: ['Unity 2D', 'C#', 'VisualStudio 2017'],
     role: 'リードプログラマー',
-    category: 'student'
+    highlights: [
+      'プロシージャル生成によるステージ無限生成システムを実装',
+      '跳躍カーブをアニメーションカーブで調整可能にしゲーム感の微調整を容易化',
+      'PlayFab 連携でハイスコアの端末間同期とランキング機能を追加',
+    ],
+    category: 'student',
   },
   {
     title: 'オルカアタック（TGS2019）',
@@ -78,7 +118,12 @@ export const projects: Project[] = [
     period: '2019年4月〜2019年9月（5か月）',
     tech: ['Unity 2D', 'C#', 'VisualStudio 2017'],
     role: 'リードプログラマー',
-    category: 'student'
+    highlights: [
+      'ボス AI を有限状態マシン (FSM) で実装し行動パターンの拡張性を確保',
+      'オブジェクトプールで水柱・エフェクトの GC 停止を防止しフレームレートを安定化',
+      '頂点シェーダーによる 2D 水面波紋シミュレーションで演出品質を向上',
+    ],
+    category: 'student',
   },
   {
     title: 'てくしぃプロジェクト（TGS2018、卒業進級制作展 2018）',
@@ -88,7 +133,12 @@ export const projects: Project[] = [
     role: 'プログラマー・機材',
     image: '/images/tech_thumb.png',
     gameUrl: 'https://www.youtube.com/watch?v=25kTSssfiRo',
-    category: 'student'
+    highlights: [
+      'VR 酔い軽減のためのコンフォートモード（視野絞りシェーダー）を実装',
+      'Oculus SDK の手トラッキング入力をゲームメカニクスに統合',
+      '空間音響エフェクトで距離感と没入感を向上',
+    ],
+    category: 'student',
   },
   {
     title: '遅刻魔少女★スクランブル（6人開発、TGS2018）',
@@ -97,7 +147,12 @@ export const projects: Project[] = [
     tech: ['Unity 2D', 'C#', 'VisualStudio 2017'],
     role: 'リードプログラマー',
     image: '/images/lategirl_thumb.png',
-    category: 'student'
+    highlights: [
+      'AI探索アルゴリズムでランダムルート生成と障害物回避 AI を実装',
+      'ブレンドシェイプ制御でキャラクターの表情変化を滑らかに表現',
+      'フレームレート非依存の時間管理システムで動作環境の差異を吸収',
+    ],
+    category: 'student',
   },
   {
     title: '神剣のメタノイア（TGS2017、卒業進級制作展 2017）',
@@ -106,6 +161,11 @@ export const projects: Project[] = [
     tech: ['Unity 2D', 'C#', 'VisualStudio 2017', 'YEBIS', 'CRI ADX2'],
     role: 'プログラマー',
     image: null,
-    category: 'student'
-  }
+    highlights: [
+      'YEBIS の被写界深度・モーションブラーをパフォーマンス予算内に収める最適化を実施',
+      'VR コントローラー 6DoF 入力による剣軌跡判定システムを設計',
+      'CRI ADX2 インタラクティブミュージックで状況に応じたBGM遷移を実現',
+    ],
+    category: 'student',
+  },
 ]

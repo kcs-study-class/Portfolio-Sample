@@ -6,6 +6,7 @@ export interface Project {
   period: string
   tech: string[]
   role: string
+  highlights?: string[]
   github?: string
   gameUrl?: string
   image?: string | null

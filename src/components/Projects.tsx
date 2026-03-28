@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import type { Project } from '../types'
 
 type ProjectsProps = {
@@ -9,9 +9,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const studentProjects = projects.filter((p) => p.category === 'student')
   const proProjects = projects.filter((p) => p.category === 'professional')
 
-  const renderGroup = (title: string, color: string, list: Project[]) => (
-    <div className="project-group" key={title}>
-      <h3 style={{ color, borderBottom: `2px solid ${color}` }}>{title}</h3>
+  const renderGroup = (title: string, colorClass: string, list: Project[]) => (
+    <div className="project-group">
+      <h3 className={`project-group-title project-group-title--${colorClass}`}>{title}</h3>
       {list.map((project) => (
         <div key={project.title} className="project">
           {project.image ? (
@@ -23,18 +23,26 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           )}
           <div className="project-content">
             <h4>{project.title}</h4>
-            <p>
-              <strong>Platform:</strong> {project.platform}
-            </p>
-            <p>
-              <strong>期間:</strong> {project.period}
-            </p>
-            <p>
-              <strong>使用技術:</strong> {project.tech.join(', ')}
-            </p>
-            <p>
-              <strong>役割:</strong> {project.role}
-            </p>
+            <div className="project-meta">
+              <p><strong>Platform</strong> {project.platform}</p>
+              <p><strong>期間</strong> {project.period}</p>
+              {project.role && <p><strong>役割</strong> {project.role}</p>}
+            </div>
+            <div className="tech-tags">
+              {project.tech.map((t) => (
+                <span key={t} className="tech-tag">{t}</span>
+              ))}
+            </div>
+            {project.highlights && project.highlights.length > 0 && (
+              <div className="project-highlights">
+                <p className="project-highlights-label">工夫した点</p>
+                <ul>
+                  {project.highlights.map((h, i) => (
+                    <li key={i}>{h}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="project-links">
               {project.github && (
                 <a href={project.github} target="_blank" rel="noreferrer">
@@ -61,8 +69,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <section className="projects-section">
       <h2>Projects</h2>
-      {renderGroup('社会人実績', '#27ae60', proProjects)}
-      {renderGroup('学生実績', '#e74c3c', studentProjects)}
+      {renderGroup('社会人実績', 'professional', proProjects)}
+      {renderGroup('学生実績', 'student', studentProjects)}
     </section>
   )
 }

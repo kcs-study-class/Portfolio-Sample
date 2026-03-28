@@ -1,15 +1,20 @@
-﻿import React, { useState } from 'react'
+import React, { useState } from 'react'
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  theme: 'light' | 'dark'
+  onToggleTheme: () => void
+}
+
+const menuItems = [
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact' },
+]
+
+const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false)
   const closeMenu = () => setIsOpen(false)
-
-  const menuItems = [
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' }
-  ]
 
   return (
     <>
@@ -27,15 +32,25 @@ const Header: React.FC = () => {
             </ul>
           </nav>
 
-          <button
-            className={`hamburger ${isOpen ? 'is-open' : ''}`}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="メニュー"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          <div className="header-actions">
+            <button
+              className="theme-toggle"
+              onClick={onToggleTheme}
+              aria-label={theme === 'light' ? 'ダークモードに切替' : 'ライトモードに切替'}
+            >
+              <span className="theme-toggle-icon">{theme === 'light' ? '☾' : '☀'}</span>
+            </button>
+
+            <button
+              className={`hamburger ${isOpen ? 'is-open' : ''}`}
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="メニュー"
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </header>
 
